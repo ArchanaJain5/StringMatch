@@ -17,7 +17,7 @@ public class BMH {
         j--;
       }
       else{
-        int jumps = shifts[T.charAt(i)-'c'];
+        int jumps = shifts[(int)T.charAt(i)];
         i = i+lenP - Math.min(j,1+jumps);
         j=lenP-1;
       }
@@ -30,7 +30,7 @@ public class BMH {
     Arrays.fill(shifts,-1);
     for(int i=0;i<lenP;i++){
       char c = P.charAt(i);
-      shifts[c-'a']=i;
+      shifts[(int)c]=i;
     }
     return shifts;
   }
